@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff2f5">
+<title>A Little Birthday Surprise for Shrushti 🎀</title>
+
+<style>
+:root {
+  --pink: #f6a9bd;
+  --deep: #b8446a;
+  --ink: #533744;
+  --cream: #fff8f5;
+  --card: #ffffffd9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", system-ui, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 15% 10%, #ffe0e9 0, transparent 30%),
+    radial-gradient(circle at 90% 80%, #f9d9ed 0, transparent 28%),
+    linear-gradient(145deg, #fff8f4, #fff0f5);
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+  position: relative;
+}
+
+.card {
+  width: min(100%, 540px);
+  padding: clamp(24px, 6vw, 42px);
+  background: var(--card);
+  border: 1px solid #fff;
+  box-shadow: 0 22px 70px #b8446a20;
+  border-radius: 30px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-size: .78rem;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: var(--deep);
+  font-weight: 800;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-weight: 500;
+  line-height: 1.08;
+  font-size: clamp(2.4rem, 9vw, 4.2rem);
+  margin: 16px 0 12px;
+  color: #8d3557;
+}
+
+h1 span {
+  color: #d86d91;
+  font-style: italic;
+}
+
+.subtitle {
+  line-height: 1.7;
+  font-size: 1.03rem;
+  max-width: 390px;
+  margin: 0 auto;
+  color: #795b67;
+}
+
+.cake {
+  font-size: 4.1rem;
+  margin: 18px auto 12px;
+  filter: drop-shadow(0 8px 8px #e58da333);
+  animation: bob 3s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+.primary, .secondary {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 22px;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.primary {
+  background: linear-gradient(135deg, #d96e92, #b8446a);
+  color: white;
+  font-weight: 750;
+  box-shadow: 0 9px 20px #b8446a30;
+}
+
+.secondary {
+  background: #fff0f4;
+  color: #9b4564;
+  border: 1px solid #f4c8d5;
+}
+
+.primary:hover, .secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px #b8446a25;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.note {
+  margin-top: 22px;
+  text-align: left;
+  background: #fff8f6;
+  border: 1px solid #f8dce5;
+  padding: 22px;
+  border-radius: 20px;
+  line-height: 1.8;
+  animation: appear .5s ease both;
+}
+
+.note p {
+  margin: 0 0 12px;
+}
+
+.note p:last-child {
+  margin-bottom: 0;
+}
+
+.signature {
+  text-align: right;
+  color: #b8446a;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 16px;
+}
+
+.footer {
+  margin-top: 24px;
+  font-size: .78rem;
+  color: #9a7a87;
+}
+
+.decor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1;
+  opacity: .65;
+  animation: drift 8s ease-in-out infinite;
+}
+
+.d1 {
+  top: 9%;
+  left: 8%;
+  font-size: 26px;
+}
+
+.d2 {
+  top: 20%;
+  right: 9%;
+  font-size: 22px;
+  animation-delay: -2s;
+}
+
+.d3 {
+  bottom: 12%;
+  left: 11%;
+  font-size: 25px;
+  animation-delay: -4s;
+}
+
+.d4 {
+  bottom: 18%;
+  right: 8%;
+  font-size: 29px;
+  animation-delay: -1s;
+}
+
+@keyframes drift {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(10deg);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  z-index: 5;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: .2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="decor d1">♡</div>
+<div class="decor d2">✿</div>
+<div class="decor d3">♡</div>
+<div class="decor d4">✧</div>
+
+<main class="page">
+  <section class="card" aria-live="polite">
+
+    <div class="eyebrow">
+      a tiny surprise, made for you
+    </div>
+
+    <div class="cake" aria-hidden="true">🎂</div>
+
+    <h1>
+      Happy Birthday,<br>
+      <span>Shrushti!</span>
+    </h1>
+
+    <p class="subtitle">
+      A little page to celebrate you and hopefully
+      add one extra smile to your special day. 🌷
+    </p>
+
+    <div class="actions">
+      <button class="primary" id="openBtn">
+        Open your surprise 💌
+      </button>
+    </div>
+
+    <div id="letter" class="note hidden">
+      <p>Hey Shrushti, 💗</p>
+
+      <p>
+        Happy Birthday! 🥳 I hope this new year of
+        your life brings you lots of happiness,
+        good health, exciting opportunities,
+        and beautiful little moments.
+      </p>
+
+      <p>
+        Keep being your lovely self, keep smiling,
+        and may today give you plenty of reasons
+        to feel special. I just wanted to make you
+        a small surprise and wish you a genuinely
+        wonderful day. ✨
+      </p>
+
+      <p>
+        No big speech—just warm wishes for someone
+        I’m glad to know. Enjoy your day to the
+        fullest! 🌸
+      </p>
+
+      <div class="signature">
+        Have the sweetest birthday! ♡
+      </div>
+    </div>
+
+    <div class="footer">
+      Made with care • just a birthday wish, no pressure 💗
+    </div>
+
+  </section>
+</main>
+
+<script>
+const openBtn = document.getElementById("openBtn");
+const letter = document.getElementById("letter");
+
+openBtn.addEventListener("click", () => {
+  letter.classList.remove("hidden");
+  openBtn.textContent = "A little extra sparkle ✨";
+  openBtn.disabled = true;
+  openBtn.style.opacity = ".8";
+
+  for (let i = 0; i < 32; i++) {
+    const bit = document.createElement("span");
+
+    bit.className = "confetti";
+    bit.textContent = ["♡", "✿", "✦", "♥"][
+      Math.floor(Math.random() * 4)
+    ];
+
+    bit.style.left = Math.random() * 100 + "vw";
+
+    bit.style.color = [
+      "#d96e92",
+      "#eab7ca",
+      "#bc7ca4",
+      "#d8a14b"
+    ][Math.floor(Math.random() * 4)];
+
+    bit.style.fontSize =
+      (12 + Math.random() * 18) + "px";
+
+    bit.style.animationDuration =
+      (3 + Math.random() * 3) + "s";
+
+    bit.style.animationDelay =
+      (Math.random() * .7) + "s";
+
+    document.body.appendChild(bit);
+
+    setTimeout(() => bit.remove(), 7000);
+  }
+});
+</script>
+
+</body>
+</html>
